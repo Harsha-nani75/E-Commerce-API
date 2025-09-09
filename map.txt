@@ -1,0 +1,27 @@
+ecommerce-api/
+├── controllers/
+│   ├── authController.js
+│   ├── productController.js
+│   ├── cartController.js
+│   ├── orderController.js
+│   └── paymentController.js
+├── models/
+│   ├── userModel.js
+│   ├── productModel.js
+│   ├── cartModel.js
+│   ├── orderModel.js
+│   └── paymentModel.js
+├── routes/
+│   ├── authRoutes.js
+│   ├── productRoutes.js
+│   ├── cartRoutes.js
+│   ├── orderRoutes.js
+│   └── paymentRoutes.js
+├── middleware/
+│   └── authMiddleware.js
+├── config/
+│   ├── db.js
+│   └── stripe.js
+├── app.js
+├── package.json
+└── README.md
