@@ -1,4 +1,9 @@
+
+
+````markdown
 # E-commerce API
+
+Project based on [roadmap.sh E-commerce API project](https://roadmap.sh/projects/ecommerce-api)
 
 ## Setup
 
@@ -9,6 +14,7 @@
 5. `npm run dev` or `npm start`
 
 ## Endpoints (examples)
+
 - `POST /api/auth/register` — { name, email, password }
 - `POST /api/auth/login` — { email, password } -> returns token
 - `GET /api/products` — list or search products
@@ -89,16 +95,18 @@ CREATE TABLE payments (
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   FOREIGN KEY (order_id) REFERENCES orders(id) ON DELETE CASCADE
 );
+````
 
 ---
 
 ## Notes, next steps & suggestions
-- **Admin creation**: Create admin by directly setting `isAdmin = 1` in DB for a user, or add an admin-only registration route.
-- **Stripe**: This example uses PaymentIntents and returns `client_secret`. On frontend you complete the payment using Stripe.js. For robust production flows, implement webhook verification via `stripe.webhooks.constructEvent` using raw body and your webhook signing secret.
-- **Validation & security**: Add request validation (e.g., `express-validator`) and sanitization before production.
-- **Transactions & inventory**: Reduce inventory when order payment is succeeded. Consider using DB transactions and row-level locking if you expect concurrent purchases on same product.
-- **Pagination & filters**: Expand `listProducts` with categories, sorting, and pagination metadata.
-- **Tests & error handling**: Add unit/integration tests and better centralized error handling.
 
----
+* **Admin creation**: Create admin by directly setting `isAdmin = 1` in DB for a user, or add an admin-only registration route.
+* **Stripe**: This example uses PaymentIntents and returns `client_secret`. On frontend you complete the payment using Stripe.js. For robust production flows, implement webhook verification via `stripe.webhooks.constructEvent` using raw body and your webhook signing secret.
+* **Validation & security**: Add request validation (e.g., `express-validator`) and sanitization before production.
+* **Transactions & inventory**: Reduce inventory when order payment is succeeded. Consider using DB transactions and row-level locking if you expect concurrent purchases on same product.
+* **Pagination & filters**: Expand `listProducts` with categories, sorting, and pagination metadata.
+* **Tests & error handling**: Add unit/integration tests and better centralized error handling.
+
+```
 
